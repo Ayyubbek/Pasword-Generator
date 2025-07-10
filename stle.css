@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+:root {
+  --unit: 1rem;
+  --primary-color: #e0e0e0;
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.25);
+  --text-color: #1a1a1a;
+  --accent-color: #4c0070;
+  --blur: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #c9d6ff, #e2e2e2);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--unit);
+}
+
+main {
+  backdrop-filter: blur(var(--blur));
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: calc(var(--unit) * 1.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: calc(var(--unit) * 2);
+  max-width: 32rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--unit);
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: calc(var(--unit) * 2);
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+h2 {
+  font-size: calc(var(--unit) * 1.25);
+  color: #555;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--unit);
+}
+
+.password-output {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: calc(var(--unit) * 0.5);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: calc(var(--unit) * 3);
+  border: 1px solid #ccc;
+}
+
+input {
+  flex: 1;
+  padding: 0 var(--unit);
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text-color);
+}
+
+input:disabled {
+  background: transparent;
+}
+
+.btn,
+#copy-password-btn {
+  background: var(--accent-color);
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: calc(var(--unit) * 0.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover,
+#copy-password-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.btn:focus,
+#copy-password-btn:focus {
+  outline: 2px solid #fff;
+}
+
+@media screen and (min-width: 48rem) {
+  :root {
+    --unit: 1.25rem;
+  }
+
+  main {
+    max-width: 40rem;
+  }
+
+  h1 {
+    font-size: calc(var(--unit) * 2.2);
+  }
+}
